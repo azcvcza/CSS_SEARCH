@@ -7,8 +7,45 @@
     <title>条纹背景</title>
 </head>
 <style>
+    .first{
+        width:400px;
+        height:400px;
+        background:linear-gradient(#fb3 30%,#58a 30%);
+        background-size:100% 50px;
+    }
+    .second{
+        width:400px;
+        height:400px;
+        background:linear-gradient(#fb3 30%,#58a 0,#58a 66.6%,green 0);
+        background-size:100% 50px;
+    }
+    .third{
+        width:400px;
+        height:400px;
+        background:linear-gradient(to right,#fb3 50%,#58a 0);
+        background-size:30px 100%;
+    }
+    .fourth{
+        width:400px;
+        height:400px;
+        background:repeating-linear-gradient(60deg,#fb3,#fb3 15px,#58a 0,#58a 30px);
+    }
 </style>
 <body>
-    
+    <!-- 水平 两色 不对等条纹-->
+    <div class="first">
+    </div>
+     <!-- 水平三色 不对等条纹-->
+    <div class="second">
+
+    </div>
+    <!-- 竖直 两色 条纹-->
+    <div class="third">
+
+    </div>
+    <!-- 倾斜条纹 -->
+    <div class="fourth">
+
+    </div>
 </body>
 </html>
