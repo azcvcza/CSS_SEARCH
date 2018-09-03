@@ -7,11 +7,46 @@
     <title>图形: 自适应椭圆</title>
 </head>
 <style>
-
+  .circle{
+      background:#fb3;
+      width:200px;
+      height:200px;
+      border-radius: 100px;
+  }
+  .new_circle{
+      background:greenyellow;
+      border-radius: 60% / 50%;
+      width:300px;
+      height: 200px;
+  }
+  #half_circle1{
+    background:greenyellow;
+      border-radius: 50%/100% 100% 0 0;
+      width:200px;
+      height: 200px;
+  }
+  #half_circle2{
+    background:greenyellow;
+      border-radius: 50%/100% 100% 0 0;
+      width:200px;
+      height: 200px;
+  }
+  #one_four_ellipse{
+    background:greenyellow;
+      border-radius: 100% 0 0 100%/50%;
+      width:200px;
+      height: 200px;
+  }
 </style>
 <body>
+    <!-- 简单圆-->
 <div class="circle">
-    
-</div>    
+
+</div>
+<!-- border-radius 百分比设置椭圆 -->
+<div class="new_circle"></div>    
+<div id="half_circle1"></div>
+<div id="half_circle2"></div>
+<div id="one_four_ellipse"></div>
 </body>
 </html>
