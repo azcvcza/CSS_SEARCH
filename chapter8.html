@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>连续的图像边框</title>
 </head>
+<style>
+    .something-meaningful {
+        background: url("image/pic_1.jpg");
+        background-size: cover;
+        padding: 1em;
+    }
+
+    .something-meaningful>div {
+        background: white;
+        padding: 1em;
+    }
+
+    .new-meaningful {
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white),
+            url("image/pic_1.jpg");
+        background-size: cover;
+        background-clip: padding-box, border-box;
+    }
+
+    .new-new-meaningful {
+        padding: 1em;
+        border: 1em solid transparent;
+        background: linear-gradient(white, white) padding-box,
+
+            repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/5em 5em;
+        background-size: cover;
+
+    }
+
+    .ant-design {
+        padding: 1em;
+        border: 1px solid transparent;
+        background: linear-gradient(white, white) padding-box,
+            repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%)0/.6em .6em;
+        animation: ants 12s linear infinite;
+    }
+
+    @keyframes ants {
+        to {
+            background-position: 100%
+        }
+    }
+
+    .foot {
+        border-top: .15em solid transparent;
+        border-image: 100% 0 0 linear-gradient(90deg, currentColor 4em, transparent 0);
+        padding-top: .5em;
+        font: 220%/1.4 Baskerville, Palatino, serif;
+    }
+</style>
+
 <body>
-    
+    <!--两元素实现图像边框-->
+    <div class="something-meaningful">
+        <div>Ihavea nice stone art border, do'nt ilook pretty</div>
+    </div>
+    <br>
+    <!--单元素实现图像边框-->
+    <div class="new-meaningful">
+        Ihavea nice stone art border, do'nt ilook pretty
+    </div>
+    <br>
+    <!--信封边框-->
+    <div class="new-new-meaningful">
+        Ihavea nice stone art border, do'nt ilook pretty
+    </div>
+    <br>
+    <!--蚂蚁行军-->
+    <div class="ant-design">
+        Ihavea nice stone art border, do'nt ilook pretty
+    </div>
+    <br>
+    <div class="foot"><sup>1</sup> This is a footnote.</div>
 </body>
+
 </html>
