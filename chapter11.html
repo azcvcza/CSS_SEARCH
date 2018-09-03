@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菱形图片</title>
+</head>
+<style>
+    .picture{
+        width:400px;
+        transform: rotate(45deg);
+        overflow:hidden;
+    }
+    .picture>img{
+        max-width:100%;
+        transform:rotate(-45deg);
+    }
+    .picture1{
+        width:800px;
+        height: 800px;
+        transform: rotate(45deg);
+        overflow:hidden;
+        margin:100px;
+    }
+    .picture1>img{
+        max-width:100%;
+        transform:rotate(-45deg) scale(1.42);
+        z-index:-1;
+        position:relative;
+    }
+</style>
+<body>
+    <!-- first : 2 element make a rectangle -->
+    <div class="picture"><img src="/image/pic_1.jpg" alt=""></div>
+    <div class="picture1"><img src="/image/pic_1.jpg" alt=""></div>
+</body>
+</html>
