@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>视觉效果-单边投影</title>
+    <title>视觉效果-投影</title>
 </head>
 <style>
     .origin{
@@ -12,10 +12,48 @@
         height:200px;
         background:black;
         /*利用box-shadow制作投影*/
+        /* x y blur&spread radii color*/
         box-shadow:2px 3px 4px yellow;
+    }
+    .bottom_shadow{
+        width:200px;
+        height:200px;
+        background: yellow;
+        /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
+        box-shadow:0 5px 4px -4px black;
+    }
+    .top_shadow{
+        width:200px;
+        height:200px;
+        background: yellow;
+        /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
+        box-shadow:0 -5px 4px -4px black;
+    }
+    .left_shadow{
+        width:200px;
+        height:200px;
+        background: yellow;
+        /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
+        box-shadow: -4px 0px 5px -4px black;
+    }
+    .right_shadow{
+        width:200px;
+        height:200px;
+        background: yellow;
+        /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
+        box-shadow:4px 0px 4px -4px black;
     }
 </style>
 <body>
     <div class="origin"></div>
+    <br>
+    <!--单边投影-->
+    <div class="bottom_shadow">下</div>
+    <br>
+    <div class="top_shadow">上</div>
+    <br>
+    <div class="left_shadow">左</div>
+    <br>
+    <div class="right_shadow">右</div>
 </body>
 </html>
