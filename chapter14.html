@@ -60,6 +60,7 @@
             stroke-dasharray: 158 158;
         }
     }
+
 </style>
 <body>
     <!--simple pie chart-->
@@ -72,5 +73,36 @@
             <circle r="30" cx="50" cy="50"></circle>
         </svg>
     </div>
+    <!-- create svg pie with js -->
+    <div class="svgpie">20%</div>
+    <div class="svgpie">60%</div>
 </body>
+<script>
+      function make_pie(){
+            var svgpies = document.getElementsByClassName("svgpie");
+            var len = svgpies.length;
+
+            var i =0;
+            for(i;i<len;i++){
+                var element = svgpies[i];
+                var p = parseFloat(element.textContent);
+                var NS = "http://www.w3.org/2000/svg";
+                var svg = document.createElementNS(NS,"svg");
+                var circle = document.createElementNS(NS,"circle");
+                var title = document.createElementNS(NS,"title");
+                circle.setAttribute("r",30);
+                circle.setAttribute("cx",16);
+                circle.setAttribute("cy",16);
+                circle.setAttribute("color","yellowgreen");
+                circle.setAttribute("stroke-dasharray",p+"100");
+                svg.setAttribute("viewBox","0 0 32 32");
+                title.textContent = element.textContent;
+                element.textContent ="";
+                svg.appendChild(title);
+                svg.appendChild(circle);
+                element.appendChild(svg);
+            }
+      }
+      make_pie();
+</script>
 </html>
