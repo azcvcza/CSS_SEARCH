@@ -7,53 +7,92 @@
     <title>视觉效果-投影</title>
 </head>
 <style>
+    body{
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        height: 100%;
+        justify-content: space-between;
+        align-self: flex-start;
+    }
     .origin{
-        width:200px;
-        height:200px;
-        background:black;
+        width:5%;
+        height:5%;
+        background:yellowgreen;
         /*利用box-shadow制作投影*/
         /* x y blur&spread radii color*/
-        box-shadow:2px 3px 4px yellow;
+        box-shadow:2px 3px 4px black;
     }
     .bottom_shadow{
-        width:200px;
-        height:200px;
+        width:5%;
+        height:5%;
         background: yellow;
         /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
         box-shadow:0 5px 4px -4px black;
     }
     .top_shadow{
-        width:200px;
-        height:200px;
+        width:5%;
+        height:5%;
         background: yellow;
         /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
         box-shadow:0 -5px 4px -4px black;
     }
     .left_shadow{
-        width:200px;
-        height:200px;
+        width:5%;
+        height:5%;
         background: yellow;
         /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
         box-shadow: -4px 0px 5px -4px black;
     }
     .right_shadow{
-        width:200px;
-        height:200px;
+        width:5%;
+        height:5%;
         background: yellow;
         /* 当负的扩张半径 = 模糊半径时,将看不到任何投影*/
         box-shadow:4px 0px 4px -4px black;
     }
+    .neighbour{
+        width:5%;
+        height:5%;
+        background: yellow;
+        /* 水平&垂直方向上的值 需要大于或者等于模糊半径的一半*/
+        box-shadow:3px 3px 6px -3px black;
+    }
+    .left_right{
+        width:5%;
+        height:5%;
+        background: yellow;
+        /* 使用两条box-shadow 来实现双侧投影*/
+        box-shadow:5px 0px 5px -5px black,
+                    -5px 0 5px -5px black;
+    }
+    .top_down{
+        width:5%;
+        height:5%;
+        background: yellow;
+        /* 使用两条box-shadow 来实现双侧投影*/
+        
+        box-shadow:0px 5px 5px -5px black,
+                   0px -5px 5px -5px black;
+    }
 </style>
 <body>
-    <div class="origin"></div>
-    <br>
+    <div class="origin">box-shadow</div>
+    
     <!--单边投影-->
     <div class="bottom_shadow">下</div>
-    <br>
+    
     <div class="top_shadow">上</div>
-    <br>
+    
     <div class="left_shadow">左</div>
-    <br>
+    
     <div class="right_shadow">右</div>
+    
+    <!-- 邻边投影-->
+    <div class="neighbour">邻边</div>
+
+    <!-- 双侧投影-->
+    <div class="left_right">左右</div>
+    <div class="top_down">上下</div>    
 </body>
 </html>
