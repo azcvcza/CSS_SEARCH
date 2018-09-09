@@ -6,6 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>解决换行问题</title>
 </head>
+<style>
+    dd{
+        margin:0;
+        font:bold;
+
+    }
+    dt,dd{
+        display:inline;
+    }
+    dd::after{
+        content:"\A";
+    }
+    dd+dd::before{
+        content:",";
+        margin-left:-.25em;
+        font-weight:normal;
+        
+    }
+</style>
 <body>
     <dl>
         <dt>hello</dt>
