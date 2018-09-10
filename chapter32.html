@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弱化背景(关灯)</title>
+</head>
+<style>
+   /*双元素实现*/
+   .overlay{
+       position:fixed;
+       top:0;
+       right:0;
+       bottom:0;
+       left:0;
+       background: rgba(0,0,0,.8);
+   }
+   .lightbox{
+       background: white;
+       width:100px;
+       height:100px;
+       margin:0 auto;
+       position:absolute;
+       z-index:1;
+   }
+</style>
+<body>
+    .........................
+    <div class="overlay"></div>
+    <div class="lightbox">hello world</div>
+</body>
+</html>
