@@ -7,9 +7,65 @@
     <title>自定义复选框</title>
 </head>
 <style>
+    input[type="checkbox"] + label::before{
+        content:"\a0";
+        display: inline-block;
+        vertical-align: .2em;
+        width:.8em;
+        height:.8em;
+        margin-right:.2em;
+        border-radius:.2em;
+        background:silver;
+        text-indent:.15em;
+        line-height:.65;
+    }
+    /*在原本复选框后 在label之前加入一个点击变绿,打钩的元素*/
+    input[type="checkbox"]:checked + label::before{
+        content:'\2713';
+        background:yellowgreen;
+    }
+    /*隐藏复选框*/
+    input[type="checkbox"]{
+        position:absolute;
+        clip:rect(0,0,0,0);
+    }
+    /*on focus*/
+    input[type="checkbox"]:focus + label::before{
+        box-shadow:0 0 .1em .1em #58a;
+    }
+    /*on disabled*/
+    input[type="checkbox"]:disabled + label::before{
+        background: gray;
+        box-shadow:none;
+        color:#555;
+    }
+
+    /*make buttons*/
+    input#awesome1 + label {
+	display: inline-block;
+	padding: .35em .5em .2em;
+	background: #ccc;
+	background-image: linear-gradient(#ddd, #bbb);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .3em;
+	box-shadow: 0 1px white inset;
+	text-align: center;
+	text-shadow: 0 1px 1px white;
+	cursor: pointer;
+}
+
+input#awesome1:checked + label,
+input#awesome1:active + label {
+	box-shadow: .04em .1em .2em rgba(0,0,0,.6) inset;
+	border-color: rgba(0,0,0,.3);
+	background: #bbb;
+}
 </style>
 <body>
     <input type="checkbox" id="awesome">
     <label for="awesome">Awesome!</label>
+
+    <input type="checkbox" id="awesome1">
+    <label for="awesome1">Awesome!</label>
 </body>
 </html>
