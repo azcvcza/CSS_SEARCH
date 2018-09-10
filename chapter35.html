@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交互式图片控件</title>
+</head>
+<style>
+    /* 没加上调节手柄*/
+    .image-slider {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-slider>div {
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        bottom: 0;
+        width: 50%;
+        overflow: hidden;
+        /*用来裁剪图片*/
+        resize: horizontal;
+    }
+
+    .image-slider img {
+        display: block;
+    }
+
+    /*利用伪元素实现手柄*/
+    .image-slider1 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-slider1>div {
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        bottom: 0;
+        width: 50%;
+        overflow: hidden;
+        /*用来裁剪图片*/
+        resize: horizontal;
+        user-select: none;
+    }
+
+    /*一个蓝色小手柄*/
+    .image-slider1>div::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(45deg, red 50%, transparent 0);
+        cursor: ew-resize;
+        transform: rotate(135deg);
+        padding: 5px;
+        background-clip: content-box;
+    }
+
+    .image-slider1 img {
+        display: block;
+        user-select: none;
+    }
+
+    /* 使用input range 来实现*/
+    .image-slider2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-slider2>div {
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        bottom: 0;
+        width: 50%;
+        overflow: hidden;
+        /*用来裁剪图片*/
+        
+        user-select: none;
+    }
+
+    
+   
+
+    .image-slider2 img {
+        display: block;
+        user-select: none;
+    }
+    .image-slider2 input {
+    position: absolute;
+      left: 0;
+ bottom: -3%;
+ width: 100%;
+ margin: 0;
+ filter: contrast(.5);
+mix-blend-mode: luminosity;
+width: 50%;
+transform: scale(2);
+transform-origin: left bottom;
+}
+</style>
+
+<body>
+    <div class="image-slider">
+        <div><img src="image/pic_07.png" alt="before"></div>
+        <img src="image/pic_03.png" alt="after">
+    </div>
+
+    <div class="image-slider1">
+        <div><img src="image/pic_07.png" alt="before"></div>
+        <img src="image/pic_03.png" alt="after">
+    </div>
+
+    <div class="image-slider2">
+        <div><img src="image/pic_07.png" alt="before"></div>
+        <img src="image/pic_03.png" alt="after">
+        <input id="range" type="range">
+    </div>
+
+</body>
+<script>
+    var range = document.getElementById('range');
+    range.oninput = function () {
+        var div = document.getElementsByClassName('image-slider2')[0].children[0];
+
+        div.style.width = this.value + '%';
+    }
+</script>
+
+</html>
