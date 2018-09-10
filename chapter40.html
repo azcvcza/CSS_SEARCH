@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>垂直居中</title>
+</head>
+<style>
+    #fixed_num {
+        background: pink;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -3em;
+        margin-left: -9em;
+        width: 18em;
+        height: 6em;
+        /*通过绝对定位*/
+        /*以及拉宽padding(等于长宽的一半),实现居中*/
+    }
+
+    #transform {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /*使元素以自身宽高的一半移动,将绝对定位的元素拉回*/
+        background: grey;
+        width: 100px;
+        height: 100px;
+    }
+
+    #vx {
+        height:.5em;
+        width: .5em;
+        padding: 1em 1.5em;
+        margin: 50vh auto 0;
+        transform: translateY(-50%);
+        background:black;
+        z-index: 1;
+    }
+</style>
+
+<body>
+    <main id="fixed_num"></main>
+    <main id="transform"></main>
+    <main id="vw"></main>
+</body>
+
+</html>
